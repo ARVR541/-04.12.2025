@@ -1,31 +1,36 @@
 //1
-function concatenateStrings(str1, str2) {
-  return (str1 + str2).replace(/ /g, '');
+export const concatenateStrings = (str1, str2) => {
+  let result = str1 + str2
+  result = result.replace(/ /g, '')
+  return result
 }
-
 //2
-function getStringLength(str) {
-  return str.length;
+export const getStringLength = (str) => {
+  return str.length
 }
 //3
-function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}!`;
+export const getStringFromTemplate = (firstName, lastName) => {
+  return `Hello, ${firstName} ${lastName}!`
 }
 //4
-function getChar(str, position) {
-  return str[position - 1];
+export const getChar = (str, index) => {
+  return str.charAt(index - 1)
 }
 //5
-function removeFirstOccurrences(str, substring) {
-  return str.replace(substring, '');
+export const removeFirstOccurrences = (str, value) => {
+  return str.replace(value, '')
 }
 //6
-function getRectangleString(width, height) {
+export function getRectangleString(width, height) {
   let result = '';
 
   for (let i = 0; i < height; i++) {
-    result += '*'.repeat(width) + '\n';
+    if (i === 0 || i === height - 1) {
+      result += '*'.repeat(width) + '\n'
+    } else {
+      result += '*' + ' '.repeat(width - 2) + '*' + '\n'
+    }
   }
 
-  return result;
+  return result
 }
